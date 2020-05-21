@@ -115,7 +115,7 @@ class StockPicking(models.Model):
 
             headers = {
                 'Content-Type': 'text/xml',
-                'SOAPAction': 'http://www.mrw.es/TransmEnvio'
+                'SOAPAction': 'http://www.mrw.es/EtiquetaEnvio,'
             }
 
             # Cargar plantilla envio
