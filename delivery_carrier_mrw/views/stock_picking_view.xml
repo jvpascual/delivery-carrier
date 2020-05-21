@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_stock_picking_mrw_form" model="ir.ui.view">
+        <field name="name">stock.picking.mrw.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form/header" position="inside">
+              <button name="mrw_send_button" string="Send picking to MRW" type="object"
+                      attrs="{'invisible':[('delivery_type', '!=', 'mrw')]}"/>
+              <button name="mrw_sticker_button" string="Get sticker from MRW" type="object"
+                      attrs="{'invisible':[('delivery_type', '!=', 'mrw')]}" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

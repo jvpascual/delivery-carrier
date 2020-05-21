@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="TransmEnvio">
+            <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+                           xmlns:mrw="http://www.mrw.es/">
+                <soap:Header>
+                    <mrw:AuthInfo>
+                        <mrw:CodigoFranquicia>
+                            <t t-esc="franchise"/>
+                        </mrw:CodigoFranquicia>
+                        <mrw:CodigoAbonado>
+                            <t t-esc="subscriber"/>
+                        </mrw:CodigoAbonado>
+                        <mrw:CodigoDepartamento>$
+                            <t t-esc="department"/>
+                        </mrw:CodigoDepartamento>
+                        <mrw:UserName>
+                            <t t-esc="username"/>
+                        </mrw:UserName>
+                        <mrw:Password>
+                            <t t-esc="password"/>
+                        </mrw:Password>
+                    </mrw:AuthInfo>
+                </soap:Header>
+                <soap:Body>
+                    <mrw:TransmEnvio>
+                        <mrw:request>
+                            <mrw:DatosEntrega>
+                                <mrw:Direccion>
+                                    <mrw:CodigoDireccion>
+                                        <t t-esc="address_code"/>
+                                    </mrw:CodigoDireccion>
+                                    <mrw:CodigoTipoVia>
+                                        <t t-esc="address_street_code"/>
+                                    </mrw:CodigoTipoVia>
+                                    <mrw:Via>
+                                        <t t-esc="address_street"/>
+                                    </mrw:Via>
+                                    <mrw:Numero>
+                                        <t t-esc="address_number"/>
+                                    </mrw:Numero>
+                                    <mrw:Resto>
+                                        <t t-esc="address_street2"/>
+                                    </mrw:Resto>
+                                    <mrw:CodigoPostal>
+                                        <t t-esc="address_zip"/>
+                                    </mrw:CodigoPostal>
+                                    <mrw:Poblacion>
+                                        <t t-esc="address_city"/>
+                                    </mrw:Poblacion>
+                                    <mrw:Provincia>
+                                        <t t-esc="address_state"/>
+                                    </mrw:Provincia>
+                                </mrw:Direccion>
+                                <mrw:Nif>
+                                    <t t-esc="partner_vat"/>
+                                </mrw:Nif>
+                                <mrw:Nombre>
+                                    <t t-esc="partner_name"/>
+                                </mrw:Nombre>
+                                <mrw:Telefono>
+                                    <t t-esc="partner_phone"/>
+                                </mrw:Telefono>
+                                <mrw:Contacto>
+                                    <t t-esc="partner_contact"/>
+                                </mrw:Contacto>
+                                <mrw:ALaAtencionDe>
+                                    <t t-esc="partner_att"/>
+                                </mrw:ALaAtencionDe>
+                                <mrw:Observaciones>
+                                    <t t-esc="note"/>
+                                </mrw:Observaciones>
+                            </mrw:DatosEntrega>
+                            <mrw:DatosServicio>
+                                <mrw:Fecha>
+                                    <t t-esc="date"/>
+                                </mrw:Fecha>
+                                <mrw:Referencia>
+                                    <t t-esc="reference"/>
+                                </mrw:Referencia>
+                                <mrw:EnFranquicia>
+                                    <t t-esc="in_franchise"/>
+                                </mrw:EnFranquicia>
+                                <mrw:CodigoServicio>
+                                    <t t-esc="service_code"/>
+                                </mrw:CodigoServicio>
+                                <mrw:NumeroBultos>
+                                    <t t-esc="number_of_packages"/>
+                                </mrw:NumeroBultos>
+                                <mrw:Peso>
+                                    <t t-esc="weight"/>
+                                </mrw:Peso>
+                                <mrw:EntregaSabado>
+                                    <t t-esc="saturday"/>
+                                </mrw:EntregaSabado>
+                                <mrw:Reembolso>
+                                    <t t-esc="cash_on_delivery"/>
+                                </mrw:Reembolso>
+                                <mrw:ImporteReembolso>
+                                    <t t-esc="cash_on_delivery_amount"/>
+                                </mrw:ImporteReembolso>
+                            </mrw:DatosServicio>
+                        </mrw:request>
+                    </mrw:TransmEnvio>
+                </soap:Body>
+            </soap:Envelope>
+        </template>
+
+        <template id="TransmEtiquetaEnvio">
+            <soapenv:Envelope
+                xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                xmlns:mrw="http://www.mrw.es/">
+                <soapenv:Header>
+                    <mrw:AuthInfo>
+                        <mrw:CodigoFranquicia><t t-esc="franchise"/>
+                        </mrw:CodigoFranquicia>
+                        <mrw:CodigoAbonado><t t-esc="subscriber"/>
+                        </mrw:CodigoAbonado>
+                        <mrw:CodigoDepartamento><t t-esc="department"/>
+                        </mrw:CodigoDepartamento>
+                        <mrw:UserName><t t-esc="username"/></mrw:UserName>
+                        <mrw:Password><t t-esc="password"/></mrw:Password>
+                    </mrw:AuthInfo>
+                </soapenv:Header>
+                <soapenv:Body>
+                    <mrw:GetEtiquetaEnvio>
+                        <mrw:request>
+                            <mrw:NumeroEnvio><t t-esc="delivery_number"/>
+                            </mrw:NumeroEnvio>
+                            <mrw:SeparadorNumerosEnvio><t t-esc="delivery_number_split"/>
+                            </mrw:SeparadorNumerosEnvio>
+                            <mrw:FechaInicioEnvio><t t-esc="date_start"/>
+                            </mrw:FechaInicioEnvio>
+                            <mrw:FechaFinEnvio><t t-esc="date_end"/>
+                            </mrw:FechaFinEnvio>
+                            <mrw:TipoEtiquetaEnvio><t t-esc="sticker_type"/>
+                            </mrw:TipoEtiquetaEnvio>
+                            <mrw:ReportTopMargin><t t-esc="top_margin"/>
+                            </mrw:ReportTopMargin>
+                            <mrw:ReportLeftMargin><t t-esc="left_margin"/>
+                            </mrw:ReportLeftMargin>
+                        </mrw:request>
+                    </mrw:GetEtiquetaEnvio>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </template>
+
+    </data>
+</odoo>

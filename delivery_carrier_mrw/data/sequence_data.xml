@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!--  SEQUENCE -->
+        <record id="seq_delivery_carrier_mrw" model="ir.sequence">
+            <field name="name">MRW</field>
+            <field name="code">mrw_stock_picking</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="padding">10</field>
+            <field name="prefix">MRW</field>
+            <field name="implementation">no_gap</field>
+        </record>
+
+    </data>
+</odoo>

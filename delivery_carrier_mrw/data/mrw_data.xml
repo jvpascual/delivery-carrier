@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- PRODUCT -->
+        <record id="product_product_mrw" model="product.product">
+            <field name="default_code">MRW_DELIVERY</field>
+            <field name="standard_price">0.0</field>
+            <field name="cost_method">standard</field>
+            <field name="type">service</field>
+            <field name="name">MRW: Delivery cost</field>
+            <field name="categ_id">1</field>
+        </record>
+
+        <!-- PARTNER -->
+        <record id="partner_mrw" model="res.partner">
+            <field name="name">MRW</field>
+            <field name="customer" eval="False"/>
+            <field name="supplier" eval="True"/>
+            <field name="is_company" eval="True"/>
+        </record>
+
+        <!-- DELIVERY CARRIER -->
+        <record id="delivery_carrier_asm" model="delivery.carrier">
+            <field name="name">MRW</field>
+            <field name="type">mrw</field>
+            <field name="partner_id" ref="partner_mrw"/>
+            <field name="product_id" ref="product_product_mrw"/>
+        </record>
+
+    </data>
+
+</odoo>

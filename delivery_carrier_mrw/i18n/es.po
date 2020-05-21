@@ -1,0 +1,261 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* delivery_carrier_mrw
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-19 10:30+0000\n"
+"PO-Revision-Date: 2020-05-19 10:30+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "48 Urgente Portugal"
+msgstr "48 Urgente Portugal"
+
+#. module: delivery_carrier_mrw
+#: model_terms:ir.ui.view,arch_db:delivery_carrier_mrw.view_delivery_carrier_mrw_form
+msgid "Authentication values"
+msgstr "Valores de autenticación"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Bag 14"
+msgstr "Bag 14"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Bag 19"
+msgstr "Bag 19"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,delivery_type:0
+msgid "Based on Rules"
+msgstr "Basado en reglas"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Caja Express 3 Kg"
+msgstr "Caja Express 3 Kg"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model,name:delivery_carrier_mrw.model_delivery_carrier
+msgid "Delivery Methods"
+msgstr "Métodos de envío"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,field_description:delivery_carrier_mrw.field_delivery_carrier__mrw_department_code
+msgid "Department Code"
+msgstr "Código de departamento"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,help:delivery_carrier_mrw.field_delivery_carrier__mrw_department_code
+msgid "Department code for MRW carrier company."
+msgstr "Código de departamento para la compañía MRW"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Documentos 14"
+msgstr "Documentos 14"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Económico"
+msgstr "Económico"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Económico +40 Kg"
+msgstr "Económico +40 Kg"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Económico Interinsular"
+msgstr "Económico Interinsular"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Express 2 Kg"
+msgstr "Express 2 Kg"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Express Documentos"
+msgstr "Express Documentos"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,delivery_type:0
+msgid "Fixed Price"
+msgstr "Precio fijo"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,field_description:delivery_carrier_mrw.field_delivery_carrier__mrw_franchise_code
+msgid "Franchise Code"
+msgstr "Código de franquicia"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,help:delivery_carrier_mrw.field_delivery_carrier__mrw_franchise_code
+msgid "Franchise code for MRW carrier company."
+msgstr "Código de franquicia para la compañía MRW"
+
+#. module: delivery_carrier_mrw
+#: model_terms:ir.ui.view,arch_db:delivery_carrier_mrw.view_stock_picking_mrw_form
+msgid "Get sticker from MRW"
+msgstr "Obtener etiqueta desde MRW"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,help:delivery_carrier_mrw.field_delivery_carrier__mrw_debug
+msgid "If selected, the test environment will be enabled"
+msgstr "Si se selecciona, se activa el entorno de pruebas"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,field_description:delivery_carrier_mrw.field_delivery_carrier__mrw_intl_service_code
+msgid "International service code"
+msgstr "Código del servicio internacional"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,delivery_type:0
+#: model:delivery.carrier,name:delivery_carrier_mrw.delivery_carrier_asm
+msgid "MRW"
+msgstr "MRW"
+
+#. module: delivery_carrier_mrw
+#: model:product.product,name:delivery_carrier_mrw.product_product_mrw
+#: model:product.template,name:delivery_carrier_mrw.product_product_mrw_product_template
+msgid "MRW: Delivery cost"
+msgstr "MRW: coste de la entrega"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Marítimo Baleares"
+msgstr "Marítimo Baleares"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,field_description:delivery_carrier_mrw.field_delivery_carrier__mrw_password
+msgid "Password"
+msgstr "Contraseña"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,field_description:delivery_carrier_mrw.field_delivery_carrier__delivery_type
+msgid "Provider"
+msgstr "Proveedor"
+
+#. module: delivery_carrier_mrw
+#: model_terms:ir.ui.view,arch_db:delivery_carrier_mrw.view_stock_picking_mrw_form
+msgid "Send picking to MRW"
+msgstr "Enviar albarán a MRW"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,field_description:delivery_carrier_mrw.field_delivery_carrier__mrw_service_code
+msgid "Service code"
+msgstr "Código de servicio"
+
+#. module: delivery_carrier_mrw
+#: model_terms:ir.ui.view,arch_db:delivery_carrier_mrw.view_delivery_carrier_mrw_form
+msgid "Setting"
+msgstr "Ajustes"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,field_description:delivery_carrier_mrw.field_delivery_carrier__mrw_subscriber_code
+msgid "Subscriber Code"
+msgstr "Código de suscriptor"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,help:delivery_carrier_mrw.field_delivery_carrier__mrw_subscriber_code
+msgid "Subscriber code for MRW carrier company."
+msgstr "Código de suscriptor para la compañía MRW"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,field_description:delivery_carrier_mrw.field_delivery_carrier__mrw_debug
+#: model_terms:ir.ui.view,arch_db:delivery_carrier_mrw.view_delivery_carrier_mrw_form
+msgid "Test environment"
+msgstr "Entorno de pruebas"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model,name:delivery_carrier_mrw.model_stock_picking
+msgid "Transfer"
+msgstr "Validar"
+
+#. module: delivery_carrier_mrw
+#: model:product.product,uom_name:delivery_carrier_mrw.product_product_mrw
+#: model:product.template,uom_name:delivery_carrier_mrw.product_product_mrw_product_template
+msgid "Unit(s)"
+msgstr "Unidad(es)"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Urgente 10"
+msgstr "Urgente 10"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Urgente 12"
+msgstr "Urgente 12"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Urgente 14"
+msgstr "Urgente 14"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Urgente 19"
+msgstr "Urgente 19"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Urgente 19 + 40 Kg"
+msgstr "Urgente 19 + 40 Kg"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Urgente 19 Expedición"
+msgstr "Urgente 19 Expedición"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Urgente 19 Portugal"
+msgstr "Urgente 19 Portugal"
+
+#. module: delivery_carrier_mrw
+#: selection:delivery.carrier,mrw_intl_service_code:0
+#: selection:delivery.carrier,mrw_service_code:0
+msgid "Urgente 22"
+msgstr "Urgente 22"
+
+#. module: delivery_carrier_mrw
+#: model:ir.model.fields,field_description:delivery_carrier_mrw.field_delivery_carrier__mrw_username
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#. module: delivery_carrier_mrw
+#: model:product.product,weight_uom_name:delivery_carrier_mrw.product_product_mrw
+#: model:product.template,weight_uom_name:delivery_carrier_mrw.product_product_mrw_product_template
+msgid "kg"
+msgstr "kg"
+
