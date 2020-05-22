@@ -17,8 +17,7 @@
                             <field name="mrw_username"/>
                             <field name="mrw_password"/>
                         </group>
-                        <group name="test_group" string="Test environment">
-                            <field name="mrw_debug" nolabel="1"/>
+                        <group name="test_group" string="environment">
                             <field name="mrw_prod_url" widget="text"/>
                             <field name="mrw_test_url" widget="text"/>
                         </group>

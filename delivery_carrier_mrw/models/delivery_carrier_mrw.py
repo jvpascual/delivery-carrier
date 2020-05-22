@@ -1,5 +1,6 @@
 from odoo import fields, models, api
 
+
 SERVICETYPES = [
     ('0000', 'Urgente 10'),
     ('0100', 'Urgente 12'),
@@ -65,6 +66,16 @@ class DeliveryCarrier(models.Model):
         string='Testing URL'
     )
 
-    @api.multi
-    def test_mrw_connection(self):
-        pass
+    def mrw_get_tracking_link(self, picking):
+        self.ensure_one()
+        if self.mrw_debug:
+            url_base = self.mrw_test_url
+        else:
+            url_base = self.mrw_prod_url
+
+        data = '?Franq=%s&Ab=%s&Dep=&Pwd=%s&Usr=%s&NumEnv=%s' % (
+            self.mrw_franchise_code, self.mrw_subscriber_code,
+            self.mrw_password, self.mrw_username, picking.customer_tracking_ref
+        )
+
+        return url_base + data

@@ -2,10 +2,12 @@ from datetime import date, timedelta
 
 import requests
 import werkzeug
+import lxml.etree
+import xml.etree.ElementTree as ET
 
-from lxml import etree
+from odoo import fields, models, api, _
+from odoo.exceptions import UserError
 
-from odoo import fields, models, api
 
 SELECT_SN = [('S', 'SI'),('N', 'NO')]
 TIPOCOBRO = [('1', 'Origen'), ('2', 'Destino')]
@@ -76,15 +78,40 @@ class StockPicking(models.Model):
                                   timeout=60)
                 r.raise_for_status()
                 response = werkzeug.utils.unescape(r.content.decode())
-                for node in etree.fromstring(response):
-                    pass
 
-            except Exception as e:
+                if response:
+                    r_state = \
+                        self.find_between(response, '<Estado>', '</Estado>')
+
+                    if r_state == 1:
+                        number = \
+                            self.find_between(response,
+                                              '<NumeroSolicitud>',
+                                              '</NumeroSolicitud>')
+                        mrw_number = self.find_between(response,
+                                                       '<NumeroEnvio>',
+                                                       '</NumeroEnvio>')
+                        mrw_url = self.find_between(response, '<Url>', '</Url>')
+
+                        picking.write({
+                          'carrier_tracking_ref': mrw_number,
+                        })
+                    else:
+                        message = \
+                            self.find_between(
+                                response, '<Mensaje>', '</Mensaje>')
+                        raise UserError(message)
+
+            except UserError as se:
+                raise UserError(
+                    _("Error.\n"
+                      "%s.") % se
+                )
+
+            except:
                 response = "timeout"
 
-
             return True
-
 
     @api.multi
     def mrw_sticker_button(self):
@@ -115,7 +142,7 @@ class StockPicking(models.Model):
 
             headers = {
                 'Content-Type': 'text/xml',
-                'SOAPAction': 'http://www.mrw.es/EtiquetaEnvio,'
+                'SOAPAction': 'http://www.mrw.es/EtiquetaEnvio'
             }
 
             # Cargar plantilla envio
@@ -130,3 +157,11 @@ class StockPicking(models.Model):
                 response = "timeout"
 
             return response
+
+    def find_between(self, s, first, last):
+        try:
+            start = s.index(first) + len(first)
+            end = s.index(last, start)
+            return s[start:end]
+        except ValueError:
+            return ""
