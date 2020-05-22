@@ -70,7 +70,6 @@ class StockPicking(models.Model):
                 'SOAPAction': 'http://www.mrw.es/TransmEnvio'
             }
 
-            # Cargar plantilla envio
             xml_transaction = self.env.ref(template).render(data).decode()
 
             try:
@@ -84,10 +83,6 @@ class StockPicking(models.Model):
                         self.find_between(response, '<Estado>', '</Estado>')
 
                     if r_state == 1:
-                        number = \
-                            self.find_between(response,
-                                              '<NumeroSolicitud>',
-                                              '</NumeroSolicitud>')
                         mrw_number = self.find_between(response,
                                                        '<NumeroEnvio>',
                                                        '</NumeroEnvio>')

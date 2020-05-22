@@ -10,7 +10,6 @@
     ],
     'data': [
         'data/mrw_data.xml',
-        'data/sequence_data.xml',
         'data/mrw_templates.xml',
         'views/delivery_carrier_view.xml',
         'views/stock_picking_view.xml',
