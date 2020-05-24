@@ -12,7 +12,6 @@
         'data/mrw_data.xml',
         'data/mrw_templates.xml',
         'views/delivery_carrier_view.xml',
-        'views/stock_picking_view.xml',
         ],
     'license': 'AGPL-3',
     'installable': True,

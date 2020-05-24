@@ -24,6 +24,21 @@
                     </group>
                 </page>
             </xpath>
+            <xpath expr="//field[@name='integration_level']" position="after">
+                <field name="mrw_price_method" attrs="{'invisible': ['|', ('delivery_type', '!=', 'mrw')]}"/>
+            </xpath>
+            <xpath expr="(//page)[1]" position="before">
+                <page string="Pricing" attrs="{'invisible': [('delivery_type', '!=', 'mrw')]}">
+                    <group attrs="{'invisible':[('mrw_price_method', '!=', 'fixed')]}">
+                        <group>
+                            <field name="fixed_price"/>
+                        </group>
+                    </group>
+                    <group name="general" attrs="{'invisible':[('mrw_price_method', '!=', 'base_on_rule')]}">
+                        <field name="price_rule_ids" nolabel="1"/>
+                    </group>
+                </page>
+            </xpath>
         </field>
     </record>
 
