@@ -123,10 +123,11 @@ class DeliveryCarrier(models.Model):
         history = HistoryPlugin()
         client = Client(
             wsdl='http://sagec-test.mrw.es/MRWEnvio.asmx?WSDL',
+            service_name=service,
             transport=Transport(),
             plugins=[history, xml_root],
         )
-        cli = client.bind('TransmitirEnvio')
+        cli = client.bind()
         response = cli[method](**data)
         trace('Request', history.last_sent)
         trace('Response', history.last_received)
@@ -160,8 +161,11 @@ class DeliveryCarrier(models.Model):
     def mrw_create_shipping(self, picking):
         self.ensure_one()
         partner = picking.partner_id
+        company = picking.company_id
         phone = (partner.phone and partner.phone.replace(' ', '') or '')
         mobile = (partner.mobile and partner.mobile.replace(' ', '') or '')
+        company_mobile = (company.partner_id.mobile and
+                          company.partner_id.mobile.replace(' ', '') or '')
         data = {
             'franchise': picking.carrier_id.mrw_franchise_code or '',
             'subscriber': picking.carrier_id.mrw_subscriber_code or '',
@@ -182,9 +186,11 @@ class DeliveryCarrier(models.Model):
             'partner_phone': phone or mobile,
             'partner_contact': '',
             'partner_att': '',
+            'company_phone': company_mobile,
             'note': picking.note,
             'date': date.today().strftime('%d/%m/%Y'),
-            'reference': '',
+            'delivery_jumps': '1',
+            'reference': picking.name,
             'in_franchise': 'E',
             'service_code': picking.carrier_id.mrw_service_code or '',
             'number_of_packages': int(picking.number_of_packages),
@@ -192,6 +198,31 @@ class DeliveryCarrier(models.Model):
             'saturday': 'N',
             'cash_on_delivery': 'N',
             'cash_on_delivery_amount': '0.00',
+            'cash_on_delivery_percentage': '0',
+            'delivery_product_type': '',
+            'products_cost': '',
+            'delivery_time_from': '',
+            'delivery_confirmation': '',
+            'delivery_with_return': '',
+            'delivery_management': '',
+            'urgent_delivery': '',
+            'promotion_delivery': '',
+            'envelope_number': '',
+            'delivery_frequency': '',
+            'delivery_time_interval': '',
+            'delivery_due': '',
+            'delivery_mask_types': '',
+            'delivery_mask_fields': '',
+            'delivery_assistant': '',
+
+
+
+
+
+
+
+
+
         }
 
         res = self.mrw_soap_send('TransmEnvio', 'TransmEnvio', data)
